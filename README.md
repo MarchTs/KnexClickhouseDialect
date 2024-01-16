@@ -32,6 +32,15 @@ export default knex({
 
 Currently the migration default enging is MergeTree. If you want to use other enging, you can use the `table.engine` function to change the enging.
 
+## Warning 
+
+- MergeTree Family Enging need to have a primary key, the primary can be assing using `table.primary` function, or can be assign in column using .primary() function or else default is "id" column.
+
+### MergeTree Family Enging
+- on update data, please note that the primary key is immutable, DO NOT put primary key into entity for update data. or use insert then optimize table.
+
+
+
 ## Testing Compatibility
 
 ### Enging Migration
